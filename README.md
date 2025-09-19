@@ -19,7 +19,7 @@ A real-time computer vision musical instrument that transforms hand gestures int
 **No Python installation required!** Download the pre-built executable for your operating system:
 
 ### For Mac/Linux Users
-- **[Download HandChordTracker](https://github.com/thisisaditya17/hand-chord-tracker/releases/latest/download/HandChordTracker)** (Ubuntu 18.04+)
+- **[Download HandChordTracker](https://github.com/thisisaditya17/hand-chord-tracker/releases/latest/download/HandChordTracker)** 
 - Make executable: `chmod +x HandChordTracker`
 - Run: `./HandChordTracker`
 - Or just open the executable in the terminal
