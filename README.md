@@ -8,7 +8,7 @@ A real-time computer vision musical instrument that transforms hand gestures int
 ### Key Features
 
 - **Real-time hand tracking** with 21-point finger detection
-- **7 chord mappings** per scale (I, ii, iii, IV, V, vi, vii°)
+- **7 chord mappings** per scale (i, ii, iii, iv, v, vi, vii)
 - **12 musical scales** with instant switching (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)
 - **Threaded audio processing** for smooth video performance
 - **Visual feedback** with chord names and scale display
@@ -68,7 +68,7 @@ python chord_tracker.py
 | Index finger | i (Tonic) | C Major |
 | Peace sign (Index + Middle) | ii (Supertonic) | D Minor |
 | Three fingers (Index + Middle + Ring) | iii (Mediant) | E Minor |
-| Four fingers (All except thumb) | IV (Subdominant) | F Major |
+| Four fingers (All except thumb) | iv (Subdominant) | F Major |
 | All five fingers | v (Dominant) | G Major |
 | Thumb + Index Finger | vi (Submediant) | A Minor |
 | Index + Pinky Finger | vii (Leading tone) | B Diminished |
