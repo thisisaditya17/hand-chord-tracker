@@ -3,7 +3,7 @@
 A real-time computer vision musical instrument that transforms hand gestures into musical chords. Built with MediaPipe hand tracking, OpenCV, and real-time audio synthesis for an intuitive gesture-controlled music experience.
 
 ## 📂 Demo Video
-*Coming soon - Record your demo and add link here*
+[▶️ Watch the demo video on Google Drive](https://drive.google.com/file/d/15UnJ3KHVJdkkFXMzIkFbgg-FiZ2SA_pw/view?usp=sharing)
 
 ### Key Features
 
