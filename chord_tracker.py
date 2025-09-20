@@ -22,6 +22,11 @@ selected_scale = available_scales[current_scale_index]
 scale_keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=']
 scale_key_map = dict(zip(scale_keys, available_scales))
 
+speed = 0.5
+print("Press '[' to decrease speed by 0.1 seconds")
+print("Press ']' to increase speed by 0.1 seconds")
+
+
 print("Controls:")
 for key, scale in scale_key_map.items():
     print(f"Press '{key}' for {scale} major scale")
@@ -49,7 +54,7 @@ while True:
                 
                 if audio_thread is None or not audio_thread.is_alive():
                     notes = ut.get_notes_for_chords(chord_name)
-                    audio_thread = threading.Thread(target=ut.play_chord_async, args=(notes,))
+                    audio_thread = threading.Thread(target=ut.play_chord_async, args=(notes, speed))
                     audio_thread.start()
             elif chord == 0:
                 last_chord = 0
@@ -59,12 +64,19 @@ while True:
     key = cv.waitKey(1) & 0xFF
     if key == ord('q'):
         break
+    elif key == ord(']'):
+        speed += 0.1
+        print(f"Speed increased to {speed:.1f} seconds")
+    elif key == ord('['):
+        speed = max(0.1, speed - 0.1)
+        print(f"Speed decreased to {speed:.1f} seconds")
     else:
         key_char = chr(key) if key < 128 else None
         if key_char in scale_key_map:
             selected_scale = scale_key_map[key_char]
             current_scale_index = available_scales.index(selected_scale)
             print(f"Switched to {selected_scale} major scale")
+    
 
 cap.release()
 cv.destroyAllWindows()

@@ -154,9 +154,9 @@ def generate_chord_wave(notes, duration, sample_rate, fade_ms=5):
 
     return chord
 
-def play_chord_async(notes):
+def play_chord_async(notes, duration):
     sr = 44100
-    chord = generate_chord_wave(notes, duration=0.5, sample_rate=sr, fade_ms=5)
+    chord = generate_chord_wave(notes, duration=duration, sample_rate=sr, fade_ms=5)
     sd.play(chord, samplerate=sr, blocking=True)
 
 
