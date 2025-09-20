@@ -3,16 +3,15 @@
 A real-time computer vision musical instrument that transforms hand gestures into musical chords. Built with MediaPipe hand tracking, OpenCV, and real-time audio synthesis for an intuitive gesture-controlled music experience.
 
 ## 📂 Demo Video
-[▶️ Watch the demo video on Google Drive](https://drive.google.com/file/d/15UnJ3KHVJdkkFXMzIkFbgg-FiZ2SA_pw/view?usp=sharing)
+[▶️ Watch the demo video on Google Drive](https://drive.google.com/file/d/1Pj3ISWmIPfKFTkQVkTXhjVRqpTVLTk2e/view?usp=sharing)
 
 ### Key Features
 
 - **Real-time hand tracking** with 21-point finger detection
 - **7 chord mappings** per scale (i, ii, iii, iv, v, vi, vii)
 - **12 musical scales** with instant switching (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)
-- **Threaded audio processing** for smooth video performance
-- **Visual feedback** with chord names and scale display
-- **Harmonic synthesis** combining multiple sine waves for rich chord sounds
+- **Visual feedback** with chord names, scale and duration display
+- **Adjustable chord duration** — change the length of notes in each chord using keyboard shortcuts
 
 ## 📦 Download Standalone Application
 
@@ -59,24 +58,25 @@ python chord_tracker.py
 4. **Start playing!**
 - Position your hand in front of the camera
 - Raise different finger combinations to play chords
-- Use keyboard shortcuts to change scales
+- Use keyboard shortcuts to change scales and duration of chords
 
 ## 🎹 Finger Mappings
 
-| Gesture | Chord Type | Example (C Major Scale) |
-|---------|------------|-------------------------|
-| Index finger | i (Tonic) | C Major |
-| Peace sign (Index + Middle) | ii (Supertonic) | D Minor |
-| Three fingers (Index + Middle + Ring) | iii (Mediant) | E Minor |
-| Four fingers (All except thumb) | iv (Subdominant) | F Major |
-| All five fingers | v (Dominant) | G Major |
-| Thumb + Index Finger | vi (Submediant) | A Minor |
-| Index + Pinky Finger | vii (Leading tone) | B Diminished |
+| Gesture | Chord Type | Example (C Major Scale) | Image    
+|---------|------------|-------------------------|---------|
+| Index finger | i (Tonic) | C Major | ![](./hand-sign-images/1.png)
+| Peace sign (Index + Middle) | ii (Supertonic) | D Minor | ![](./hand-sign-images/2.png)
+| Three fingers (Index + Middle + Ring) | iii (Mediant) | E Minor | ![](./hand-sign-images/3.png)
+| Four fingers (All except thumb) | iv (Subdominant) | F Major | ![](./hand-sign-images/4.png)
+| All five fingers | v (Dominant) | G Major | ![](./hand-sign-images/5.png)
+| Thumb + Index Finger | vi (Submediant) | A Minor | ![](./hand-sign-images/6.png)
+| Index + Pinky Finger | vii (Leading tone) | B Diminished | ![](./hand-sign-images/7.png)
 
 ## ⌨️ Controls
 
 **Scale Selection:**
 - `1-9`, `0`, `-`, `=` - Direct scale selection
+- `[`, `]` - Change duration of each chord
 - `q` - Quit application
 
 **Visual Indicators:**
