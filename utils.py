@@ -72,16 +72,16 @@ def get_notes_for_chords(chord):
     chords_notes = {
         # Major chords
         "C": ["C", "E", "G"],
-        "C#": ["C#", "F", "G#"],   # E# = F
+        "C#": ["C#", "F", "G#"],  
         "D": ["D", "F#", "A"],
-        "D#": ["D#", "G", "A#"],    # G instead of F## (simplified enharmonic)
+        "D#": ["D#", "G", "A#"],   
         "E": ["E", "G#", "B"],
         "F": ["F", "A", "C"],
         "F#": ["F#", "A#", "C#"],
         "G": ["G", "B", "D"],
-        "G#": ["G#", "C", "D#"],    # C instead of B#
+        "G#": ["G#", "C", "D#"],   
         "A": ["A", "C#", "E"],
-        "A#": ["A#", "D", "F"],     # D instead of C##
+        "A#": ["A#", "D", "F"],     
         "B": ["B", "D#", "F#"],
 
         # Minor chords
