@@ -23,13 +23,12 @@ scale_keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=']
 scale_key_map = dict(zip(scale_keys, available_scales))
 
 speed = 0.5
-print("Press '[' to decrease speed by 0.1 seconds")
-print("Press ']' to increase speed by 0.1 seconds")
-
 
 print("Controls:")
 for key, scale in scale_key_map.items():
     print(f"Press '{key}' for {scale} major scale")
+print("Press '[' to decrease speed by 0.1 seconds")
+print("Press ']' to increase speed by 0.1 seconds")
 print("Press 'q' to quit")
 
 while True:
