@@ -27,8 +27,8 @@ speed = 0.5
 print("Controls:")
 for key, scale in scale_key_map.items():
     print(f"Press '{key}' for {scale} major scale")
-print("Press '[' to decrease speed by 0.1 seconds")
-print("Press ']' to increase speed by 0.1 seconds")
+print("Press '[' to decrease duration of chord by 0.1 seconds")
+print("Press ']' to increase duration of chord by 0.1 seconds")
 print("Press 'q' to quit")
 
 while True:
@@ -36,7 +36,8 @@ while True:
     rgb_frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
     results = hands.process(rgb_frame)
 
-    cv.putText(frame, f'Scale: {selected_scale} Major', (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
+    cv.putText(frame, f'Scale: {selected_scale} Major', (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 10), 2)
+    cv.putText(frame, f'Duration: {speed:.1f}s', (200, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 10), 2)
 
     if results.multi_hand_landmarks:
         for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
@@ -49,7 +50,7 @@ while True:
                 last_chord = chord
                 chords_dict = ut.scale_chords(selected_scale)
                 chord_name = chords_dict[chord]
-                cv.putText(frame, f'Chord: {chord_name}', (10, 70), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                cv.putText(frame, f'Chord: {chord_name}', (10, 70), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
                 
                 if audio_thread is None or not audio_thread.is_alive():
                     notes = ut.get_notes_for_chords(chord_name)
@@ -65,10 +66,10 @@ while True:
         break
     elif key == ord(']'):
         speed += 0.1
-        print(f"Speed increased to {speed:.1f} seconds")
+        print(f"Duration increased to {speed:.1f} seconds")
     elif key == ord('['):
         speed = max(0.1, speed - 0.1)
-        print(f"Speed decreased to {speed:.1f} seconds")
+        print(f"Duration decreased to {speed:.1f} seconds")
     else:
         key_char = chr(key) if key < 128 else None
         if key_char in scale_key_map:
